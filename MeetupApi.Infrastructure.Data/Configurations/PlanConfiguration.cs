@@ -16,7 +16,14 @@ namespace MeetupApi.Infrastructure.Data.Configurations
                     Time = DateTime.Now,
                     Description = "Ask questions",
                     EventId = new Guid("01abbca8-664d-4b20-b5de-024705497d4a")
-                }  
+                },
+                new Plan
+                {
+                    Id = new Guid("02abbca8-664d-4b20-b5de-024705497d4c"),
+                    Time = DateTime.Now,
+                    Description = "Conclusion",
+                    EventId = new Guid("01abbca8-664d-4b20-b5de-024705497d4a")
+                }
             );
         }
     }

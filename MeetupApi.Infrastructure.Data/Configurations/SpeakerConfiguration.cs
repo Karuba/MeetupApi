@@ -14,7 +14,12 @@ namespace MeetupApi.Infrastructure.Data.Configurations
                 {
                     Id = new Guid("01abbca8-664d-4b20-b5de-024705497d4d"),
                     Name = "Dmitry"
-                }    
+                },
+                new Speaker
+                {
+                    Id = new Guid("02abbca8-664d-4b20-b5de-024705497d4d"),
+                    Name = "Some man"
+                }
             );
         }
     }

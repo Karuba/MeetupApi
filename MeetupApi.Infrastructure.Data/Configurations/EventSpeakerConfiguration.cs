@@ -24,6 +24,11 @@ namespace MeetupApi.Infrastructure.Data.Configurations
                 {
                     EventId = new Guid("01abbca8-664d-4b20-b5de-024705497d4a"),
                     SpeakerId = new Guid("01abbca8-664d-4b20-b5de-024705497d4d")
+                },
+                new EventSpeaker
+                {
+                    EventId = new Guid("01abbca8-664d-4b20-b5de-024705497d4a"),
+                    SpeakerId = new Guid("02abbca8-664d-4b20-b5de-024705497d4d")
                 }
             );
         }

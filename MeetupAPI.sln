@@ -5,6 +5,14 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetupAPI", "MeetupAPI\MeetupAPI.csproj", "{8B3156BB-133C-4E60-9DFC-72950DDBBADF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{C2901BF9-DE6D-4134-86A6-042BE37F9DC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{5A0E3762-E1FC-429C-87C0-37503C40D050}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{8596EAD1-F906-41BC-AA0E-01A4CA154BD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetupApi.Domain.Core", "MeetupApi.Domain.Core\MeetupApi.Domain.Core.csproj", "{6C01D9EF-B7B5-4B8F-B002-38C50F14B7E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +23,16 @@ Global
 		{8B3156BB-133C-4E60-9DFC-72950DDBBADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B3156BB-133C-4E60-9DFC-72950DDBBADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B3156BB-133C-4E60-9DFC-72950DDBBADF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C01D9EF-B7B5-4B8F-B002-38C50F14B7E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C01D9EF-B7B5-4B8F-B002-38C50F14B7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C01D9EF-B7B5-4B8F-B002-38C50F14B7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C01D9EF-B7B5-4B8F-B002-38C50F14B7E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6C01D9EF-B7B5-4B8F-B002-38C50F14B7E7} = {C2901BF9-DE6D-4134-86A6-042BE37F9DC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {29C6020A-B50B-43B0-99C8-4395D9AFDF1D}

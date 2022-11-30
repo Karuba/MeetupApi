@@ -17,15 +17,19 @@ namespace MeetupApi.Infrastructure.Data.Repositories.Repositories
 
         public async Task<Event> GetEventAsync(Guid id, bool trackChanges = false) =>
             await FindByCondition(opt => opt.Id.Equals(id), trackChanges)
+                    .Include(e => e.Plans)
+                    .Include(e => e.Organizer)
                     .Include(e => e.EventSpeakers)
-                    .ThenInclude(es => es.Event)
+                    .ThenInclude(es => es.Speaker)
                     .FirstOrDefaultAsync();
 
         public async Task<IEnumerable<Event>> GetEventsAsync(bool trackChanges = false) =>
             await FindAll(trackChanges)
                     .OrderBy(e => e.Name)
+                    .Include(e => e.Plans)
+                    .Include(e => e.Organizer)
                     .Include(e => e.EventSpeakers)
-                    .ThenInclude(es => es.Event)
+                    .ThenInclude(es => es.Speaker)
                     .ToListAsync();
 
         public void UpdateEvent(Event @event) => Update(@event);

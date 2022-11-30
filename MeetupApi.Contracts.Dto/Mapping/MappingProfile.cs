@@ -13,6 +13,12 @@ namespace MeetupApi.Contracts.Dto.Mapping
             CreateMap<Plan, PlanDto>();
             CreateMap<Organizer, OrganizerDto>();
             CreateMap<Speaker, SpeakerDto>();
+
+            CreateMap<EventCreateDto, Event>().ForMember(c => c.Date, opt => opt.MapFrom(x => DateTime.Now));
+            CreateMap<PlanCreateDto, Plan>().ForMember(c => c.Time, opt => opt.MapFrom(x => DateTime.Now));
+
+            CreateMap<EventUpdateDto, Event>().ForMember(c => c.Date, opt => opt.MapFrom(x => DateTime.Now));
+            CreateMap<PlanUpdateDto, Plan>().ForMember(c => c.Time, opt => opt.MapFrom(x => DateTime.Now));
         }
     }
 }

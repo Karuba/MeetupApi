@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -16,8 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MeetupApi.Infrastructure.Business\MeetupApi.Infrastructure.Business.csproj" />
     <ProjectReference Include="..\MeetupApi.Infrastructure.Data\MeetupApi.Infrastructure.Data.csproj" />
     <ProjectReference Include="..\MeetupApi.Infrastructure.Migr.SqlServer\MeetupApi.Infrastructure.Migr.SqlServer.csproj" />
+    <ProjectReference Include="..\MeetupApi.Presentation.Controllers\MeetupApi.Presentation.Controllers.csproj" />
+    <ProjectReference Include="..\MeetupApi.Services.Interfaces\MeetupApi.Services.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

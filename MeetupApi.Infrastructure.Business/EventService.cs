@@ -1,6 +1,8 @@
 ﻿
 using AutoMapper;
 using MeetupApi.Contracts.Dto;
+using MeetupApi.Domain.Core.Entities;
+using MeetupApi.Domain.Core.Exceptions;
 using MeetupApi.Domain.Interfaces.Repositories;
 using MeetupApi.Services.Interfaces;
 
@@ -22,19 +24,42 @@ namespace MeetupApi.Infrastructure.Business
         public async Task<IEnumerable<EventDto>> GetEventsAsync() =>
             _mapper.Map<IEnumerable<EventDto>>(await _repository.Event.GetEventsAsync());
 
-        public Task<EventDto> CreateEvent(EventCreateDto @event)
+        public async Task<EventDto> CreateEvent(EventCreateDto @event)
         {
-            throw new NotImplementedException();
+            if (@event is null)
+                throw new BadRequestException("Event is null");
+
+            var eventEntity = _mapper.Map<Event>(@event);
+
+
+            _repository.Event.AddEvent(eventEntity);
+            await _repository.SaveAsync();
+
+            return _mapper.Map<EventDto>(eventEntity);
+
         }
 
-        public Task DeleteEvent(Guid id)
+        public async Task DeleteEvent(Guid id)
         {
-            throw new NotImplementedException();
+            var eventEntity = await _repository.Event.GetEventAsync(id);
+            if (eventEntity is null)
+                throw new NotFoundException($"Event with ID: {id} does not exist in the database yet");
+            _repository.Event.DeleteEvent(eventEntity);
+            await _repository.SaveAsync();
         }
 
-        public Task<EventDto> UpdateEventAsync(Guid id, EventUpdateDto @event)
+        public async Task<EventDto> UpdateEventAsync(Guid id, EventUpdateDto @event)
         {
-            throw new NotImplementedException();
+            if (@event is null)
+                throw new BadRequestException("Event is null");
+
+            var eventEntity = await _repository.Event.GetEventAsync(id, trackChanges: true);
+            if (eventEntity is null)
+                throw new NotFoundException($"Event with ID: {id} does not exist in the database");
+
+            _mapper.Map(@event, eventEntity);
+            await _repository.SaveAsync();
+            return _mapper.Map<EventDto>(eventEntity);
         }
     }
 }

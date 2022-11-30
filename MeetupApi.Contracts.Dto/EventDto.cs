@@ -1,8 +1,4 @@
 ﻿
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using MeetupApi.Domain.Core.Entities;
-
 namespace MeetupApi.Contracts.Dto
 {
     public class EventDto
@@ -13,8 +9,8 @@ namespace MeetupApi.Contracts.Dto
         public DateTime Date { get; set; }
         public string Location { get; set; }
 
-        public Organizer Organizer { get; set; }
-        public ICollection<Plan>? Plans { get; set; }
-        public ICollection<Speaker>? Speakers { get; set; }
+        public OrganizerDto Organizer { get; set; }
+        public ICollection<PlanDto>? Plans { get; set; }
+        public ICollection<SpeakerDto>? Speakers { get; set; }
     }
 }

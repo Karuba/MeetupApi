@@ -8,11 +8,11 @@ namespace MeetupApi.Contracts.Dto.Mapping
     {
         public MappingProfile()
         {
-            CreateMap<Event, EventDto>().ForMember(c => c.Speakers, opt => opt.MapFrom(x => x.EventSpeakers.Select(x => x.Speaker).Select(x => new SpeakerDto
-            {
-                Id = x.Id,
-                Name = x.Name,
-            })));
+            CreateMap<Event, EventDto>().ForMember(c => c.Speakers, opt => opt.MapFrom(x => x.EventSpeakers
+                .Select(x => x.Speaker)));
+            CreateMap<Plan, PlanDto>();
+            CreateMap<Organizer, OrganizerDto>();
+            CreateMap<Speaker, SpeakerDto>();
         }
     }
 }

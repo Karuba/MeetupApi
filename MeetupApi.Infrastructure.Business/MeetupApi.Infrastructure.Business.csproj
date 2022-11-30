@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MeetupApi.Contracts.Dto\MeetupApi.Contracts.Dto.csproj" />
+    <ProjectReference Include="..\MeetupApi.Domain.Interfaces\MeetupApi.Domain.Interfaces.csproj" />
+    <ProjectReference Include="..\MeetupApi.Services.Interfaces\MeetupApi.Services.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetupApi.Domain.Core", "MeetupApi.Domain.Core\MeetupApi.Domain.Core.csproj", "{6C01D9EF-B7B5-4B8F-B002-38C50F14B7E7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetupApi.Infrastructure.Data", "MeetupApi.Infrastructure.Data\MeetupApi.Infrastructure.Data.csproj", "{41C42A63-5343-4FF7-B36E-718E4D0BB69F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetupApi.Infrastructure.Migr.SqlServer", "MeetupApi.Infrastructure.Migr.SqlServer\MeetupApi.Infrastructure.Migr.SqlServer.csproj", "{97A72A55-B017-4AB3-AA6B-9358CE8A0079}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,12 +31,22 @@ Global
 		{6C01D9EF-B7B5-4B8F-B002-38C50F14B7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C01D9EF-B7B5-4B8F-B002-38C50F14B7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C01D9EF-B7B5-4B8F-B002-38C50F14B7E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41C42A63-5343-4FF7-B36E-718E4D0BB69F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41C42A63-5343-4FF7-B36E-718E4D0BB69F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41C42A63-5343-4FF7-B36E-718E4D0BB69F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41C42A63-5343-4FF7-B36E-718E4D0BB69F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97A72A55-B017-4AB3-AA6B-9358CE8A0079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97A72A55-B017-4AB3-AA6B-9358CE8A0079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97A72A55-B017-4AB3-AA6B-9358CE8A0079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97A72A55-B017-4AB3-AA6B-9358CE8A0079}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6C01D9EF-B7B5-4B8F-B002-38C50F14B7E7} = {C2901BF9-DE6D-4134-86A6-042BE37F9DC8}
+		{41C42A63-5343-4FF7-B36E-718E4D0BB69F} = {5A0E3762-E1FC-429C-87C0-37503C40D050}
+		{97A72A55-B017-4AB3-AA6B-9358CE8A0079} = {5A0E3762-E1FC-429C-87C0-37503C40D050}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {29C6020A-B50B-43B0-99C8-4395D9AFDF1D}

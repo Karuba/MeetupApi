@@ -1,6 +1,7 @@
 ﻿
 using MeetupApi.Contracts.Dto;
 using MeetupApi.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeetupApi.Presentation.Controllers.Controllers
@@ -27,19 +28,19 @@ namespace MeetupApi.Presentation.Controllers.Controllers
             var eventDto = await _service.eventService.GetEventAsync(id);
             return Ok(eventDto);
         }
-        [HttpPost]
+        [HttpPost, Authorize(Roles = "Organizer")]
         public async Task<IActionResult> CreateEvent([FromBody] EventCreateDto eventCreateDto)
         {
             var eventDto = await _service.eventService.CreateEvent(eventCreateDto);
             return Ok(eventDto);
         }
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}"), Authorize(Roles = "Organizer")]
         public async Task<IActionResult> DeleteEvent(Guid id)
         {
             await _service.eventService.DeleteEvent(id);
             return NoContent();
         }
-        [HttpPut("{id}")]
+        [HttpPut("{id}"), Authorize(Roles = "Organizer")]
         public async Task<IActionResult> UpdateEvent(Guid id, [FromBody] EventUpdateDto eventUpdateDto)
         {
             var eventDto = await _service.eventService.UpdateEventAsync(id, eventUpdateDto);

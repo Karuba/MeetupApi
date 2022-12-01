@@ -19,6 +19,8 @@ namespace MeetupApi.Contracts.Dto.Mapping
 
             CreateMap<EventUpdateDto, Event>().ForMember(c => c.Date, opt => opt.MapFrom(x => DateTime.Now));
             CreateMap<PlanUpdateDto, Plan>().ForMember(c => c.Time, opt => opt.MapFrom(x => DateTime.Now));
+
+            CreateMap<User, UserRegistrationDto>().ReverseMap();
         }
     }
 }

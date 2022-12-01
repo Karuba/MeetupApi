@@ -4,6 +4,7 @@ using MeetupApi.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MeetupApi.Infrastructure.Migr.SqlServer.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20221130235059_CreateIdentityTable")]
+    partial class CreateIdentityTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -58,7 +61,7 @@ namespace MeetupApi.Infrastructure.Migr.SqlServer.Migrations
                         new
                         {
                             Id = new Guid("01abbca8-664d-4b20-b5de-024705497d4a"),
-                            Date = new DateTime(2022, 12, 1, 2, 59, 5, 94, DateTimeKind.Local).AddTicks(8334),
+                            Date = new DateTime(2022, 12, 1, 2, 50, 59, 609, DateTimeKind.Local).AddTicks(2120),
                             Description = "A quick test of your technical skills",
                             Location = "At home",
                             Name = "Technical screening",
@@ -145,14 +148,14 @@ namespace MeetupApi.Infrastructure.Migr.SqlServer.Migrations
                             Id = new Guid("01abbca8-664d-4b20-b5de-024705497d4c"),
                             Description = "Ask questions",
                             EventId = new Guid("01abbca8-664d-4b20-b5de-024705497d4a"),
-                            Time = new DateTime(2022, 12, 1, 2, 59, 5, 94, DateTimeKind.Local).AddTicks(8405)
+                            Time = new DateTime(2022, 12, 1, 2, 50, 59, 609, DateTimeKind.Local).AddTicks(2193)
                         },
                         new
                         {
                             Id = new Guid("02abbca8-664d-4b20-b5de-024705497d4c"),
                             Description = "Conclusion",
                             EventId = new Guid("01abbca8-664d-4b20-b5de-024705497d4a"),
-                            Time = new DateTime(2022, 12, 1, 2, 59, 5, 94, DateTimeKind.Local).AddTicks(8409)
+                            Time = new DateTime(2022, 12, 1, 2, 50, 59, 609, DateTimeKind.Local).AddTicks(2196)
                         });
                 });
 
@@ -278,22 +281,6 @@ namespace MeetupApi.Infrastructure.Migr.SqlServer.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "30275fbc-db4f-4692-ba80-9dfe284d8ab6",
-                            ConcurrencyStamp = "469ed6bc-8c47-4d83-9415-be178b36b8e9",
-                            Name = "Participant",
-                            NormalizedName = "PARTICIPANT"
-                        },
-                        new
-                        {
-                            Id = "8faeed7f-9f1c-44f5-923b-7d74884904e6",
-                            ConcurrencyStamp = "c4461ded-6afe-4eea-aa31-b875e22cd812",
-                            Name = "Organizer",
-                            NormalizedName = "ORGANIZER"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
